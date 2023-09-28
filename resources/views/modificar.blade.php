@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Inicio</title>
+<title>Modificar ropa</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -32,10 +32,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <h5>Funciones</h5>
   </div>
   <div class="w3-bar-block">
+    <a href="inicio" class="w3-bar-item w3-button w3-padding"><i class="fa fa-edit fa-fw"></i>  Inicio</a>
     <a href="ingreso" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-registered"></i>  Registrar Ingreso</a>
     <a href="egreso" class="w3-bar-item w3-button w3-padding"><i class="fa fa-registered"></i>  Registrar Egreso</a>
     <a href="transaccion" class="w3-bar-item w3-button w3-padding"><i class="fa fa-search fa-fw"></i>  Buscar Transacciones</a>
-    <a href="modificar" class="w3-bar-item w3-button w3-padding"><i class="fa fa-edit fa-fw"></i>  Modificar datos de ropa</a>
   </div>
 </nav>
 
@@ -48,7 +48,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header class="w3-container" style="padding-top:22px">
-    <h5><b><i class="fa fa-dashboard"></i>Inicio</b></h5>
+    <h5><b><i class="fa fa-dashboard"></i>Modificar</b></h5>
   </header>
 
   <div class="w3-row-padding w3-margin-bottom">

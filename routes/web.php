@@ -21,4 +21,21 @@ Route::get('/inicio', function () {
     return view('inicio');
 });
 
+Route::get('/ingreso', function () {
+    return view('ingreso');
+});
+
+Route::get('/egreso', function () {
+    return view('egreso');
+});
+
+Route::get('/transaccion', function () {
+    return view('transaccion');
+});
+
+Route::get('/modificar', function () {
+    return view('modificar');
+});
+
+
 

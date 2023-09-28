@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Login Page with Background Image Example</title>
-  <link rel="stylesheet" href="{{ asset('css/inicio.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 
 </head>
 <body>

@@ -37,5 +37,14 @@ Route::get('/modificar', function () {
     return view('modificar');
 });
 
+Route::get('/ayuda', function () {
+    return view('ayuda');
+});
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

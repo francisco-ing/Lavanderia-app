@@ -1,73 +1,22 @@
-* {
-	box-sizing: border-box;
-}
-body {
-	font-family: poppins;
-	font-size: 16px;
-	color: #fff;
-}
-
-.form-box {
-  margin: 0px auto;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	width: 500px;
-	height: 430px;
-}
-
-.form-box:before {
-	background-color: cornflowerblue;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	content: "";
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	z-index: -1;
-	display: block;
-	filter: blur(1px);
-}
-
-.form-box .header-text {
-	font-size: 32px;
-	font-weight: 600;
-	text-align: center;
-}
-
-.form-box input {
-	margin: 10px 0px;
-	border: none;
-	padding: 10px;
-	border-radius: 5px;
-	width: 100%;
-	font-size: 18px;
-	font-family: poppins;
-}
-
-.form-box input[type=checkbox]:checked+label:before {
-	content: "\2713";
-	font-size: 20px;
-	color: #000;
-	text-align: center;
-	line-height: 20px;
-}
-
-#icono > img{
-  width: 350px;
-}
-
-#icono{
-  padding-top: 30px;
-  display: flex;
-  justify-content: center;
-}
-
-h4{
-  color: black;
-}
+.gradient-custom-2 {
+	/* fallback for old browsers */
+	background: #fccb90;
+	
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+	
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+	}
+	
+	@media (min-width: 768px) {
+	.gradient-form {
+	height: 100vh !important;
+	}
+	}
+	@media (min-width: 769px) {
+	.gradient-custom-2 {
+	border-top-right-radius: .3rem;
+	border-bottom-right-radius: .3rem;
+	}
+	}

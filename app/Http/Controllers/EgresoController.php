@@ -24,7 +24,7 @@ class EgresoController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

@@ -38,7 +38,7 @@ document.getElementById('logout-form').submit();">{{ __('Cerrar Sesion') }}</a>
     <h5>Funciones</h5>
   </div>
   <div class="w3-bar-block">
-    <a href="home" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-registered"></i>  Inicio</a>
+    <a href="home" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-home"></i>  Inicio</a>
     <a href="ingreso" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-registered"></i>  Registrar Ingreso</a>
     <a href="egreso" class="w3-bar-item w3-button w3-padding"><i class="fa fa-registered"></i>  Registrar Egreso</a>
     <a href="transaccion" class="w3-bar-item w3-button w3-padding"><i class="fa fa-search fa-fw"></i>  Buscar Transacciones</a>

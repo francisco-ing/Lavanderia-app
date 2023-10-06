@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/login', function () {
     return view('login');
 });
@@ -29,8 +28,11 @@ Route::get('/egreso', function () {
     return view('egreso');
 });
 
-Route::get('/transaccion', function () {
-    return view('transaccion');
+Route::resource('/transaccion', App\Http\Controllers\TransaccionController::class);
+
+Route::get('/generar-pdf', function () {
+    $pdf = PDF::loadView('tabla');
+    return $pdf->download('tabla.pdf');
 });
 
 Route::get('/modificar', function () {
@@ -40,6 +42,7 @@ Route::get('/modificar', function () {
 Route::get('/ayuda', function () {
     return view('ayuda');
 });
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

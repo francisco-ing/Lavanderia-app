@@ -14,7 +14,7 @@ class IngresoController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**

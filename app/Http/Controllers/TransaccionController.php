@@ -15,19 +15,18 @@ class TransaccionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+
     public function index(Request $request)
     {
         $busqueda=trim($request->get('busqueda'));
-        
+
         $egresos=DB::table('egreso')
             ->select('id', 'encargado', 'fecha', 'hora', 'cantidad')
             ->where('id', 'LIKE', '%'.$busqueda.'%')
             ->orWhere('fecha', 'LIKE', '%'.$busqueda.'%')
             ->orWhere('cantidad', 'LIKE', '%'.$busqueda.'%')
             ->orWhere('encargado', 'LIKE', '%'.$busqueda.'%')
-            ->orderBy('encargado', 'asc')
-            ->paginate(5);
+            ->paginate(10);
 
         $ingresos=DB::table('ingreso')
             ->select('id', 'encargado', 'fecha', 'hora', 'cod_lote','cantidad')
@@ -36,9 +35,8 @@ class TransaccionController extends Controller
             ->orWhere('cantidad', 'LIKE', '%'.$busqueda.'%')
             ->orWhere('encargado', 'LIKE', '%'.$busqueda.'%')
             ->orWhere('cod_lote', 'LIKE', '%'.$busqueda.'%')
-            ->orderBy('encargado', 'asc')
-            ->paginate(5);
-    
+            ->paginate(10);
+
         return view('transaccion', compact('egresos', 'ingresos', 'busqueda'));
     }
 

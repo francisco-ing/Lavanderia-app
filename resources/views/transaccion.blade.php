@@ -5,9 +5,11 @@
         var campoBusqueda = document.getElementById("campo_busqueda");
 
         if (seleccion == "fecha") {
+            campoBusqueda.value = "";
             campoBusqueda.type = "date";
         } else {
             campoBusqueda.type = "text";
+            campoBusqueda.value = "";
         }
     }
 </script>
@@ -17,7 +19,7 @@
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 
   <!-- Header -->
-  <header class="w3-container" style="display:flex; justify-content:center;"> 
+  <header class="w3-container" style="display:flex; justify-content:center;">
     <h1>Transacciones</h1>
   </header>
 
@@ -25,10 +27,10 @@
   <form action="{{ route('transaccion.index') }}" method="get">
     <label for="busqueda">Buscar por:</label>
     <select id="busqueda" name="busqueda" onchange="cambiarTipoInput()">
-        <option value="id">Referencia</option>
+        <option value="id">Coincidencia</option>
         <option value="fecha">Fecha</option>
     </select>
-    
+
     <input type="text" id="campo_busqueda" value="{{$busqueda}}" name="busqueda">
     <input type="submit" value= "Buscar">
 </form>
@@ -48,7 +50,7 @@
                 <th>Cantidad</th>
               </tr>
               <tbody>
-                @if(count($ingresos)<=0)
+                @if(count($ingresos)<0)
                 <tr>
                   nada
                 </tr>
@@ -64,9 +66,37 @@
                   <td>{{$ingreso->cantidad}}</td>
                 </tr>
                 @endforeach
+                @endif
+              </tbody>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="container">
+    <h4>Egresos</h4>
+    <div class="row">
+      <div class="col-1x-12">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Encargado</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Lote</th>
+                <th>Cantidad</th>
+              </tr>
+              <tbody>
+                @if(count($ingresos)<0)
+                <tr>
+                  nada
+                </tr>
+                @else
                 @foreach ($egresos as $egreso)
                 <tr>
-                  <td></td>
                   <td>{{$egreso->encargado}}</td>
                   <td>{{$egreso->fecha}}</td>
                   <td>{{$egreso->hora}}</td>

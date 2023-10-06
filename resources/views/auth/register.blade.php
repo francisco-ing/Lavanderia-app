@@ -52,6 +52,9 @@
                     <label class="form-label" for="form2Example22">Contrasena</label>
                     <input type="password" name="password" id="form2Example22" class="form-control"
                     placeholder="**********" />
+                    <div id="passwordHelpBlock" class="form-text">
+                      Tu contrasena debe contener: mayuscula, minuscula, numero y caracter especial!.
+                    </div>
                   </div>
 
                   <div class="form-outline mb-4">

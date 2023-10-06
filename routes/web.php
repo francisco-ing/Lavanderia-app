@@ -44,7 +44,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Route::prefix('ingreso')->group(function () {
+    Route::post('/store' , [App\Http\Controllers\IngresoController::class, 'store'])->name('ingreso.store');
+});
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::prefix('egreso')->group(function () {
+    Route::post('/store' , [App\Http\Controllers\EgresoController::class, 'store'])->name('egreso.store');
+});

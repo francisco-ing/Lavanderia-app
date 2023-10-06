@@ -17,7 +17,7 @@
 
 <!-- Top container // CERRAR SESION -->
 <div class="w3-bar w3-top w3-blue w3-large" style="z-index:4">
-<a class="w3-bar-item w3-right"  href="{{ route('logout') }}" onclick="event.preventDefault();
+<a style="color:black;" class="w3-bar-item w3-right"  href="{{ route('logout') }}" onclick="event.preventDefault();
 document.getElementById('logout-form').submit();">{{ __('Cerrar Sesion') }}</a>
 <form id="logout-form" action="{{route('logout')}}" method="POST">
 @csrf

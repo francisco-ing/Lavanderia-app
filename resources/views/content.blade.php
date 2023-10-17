@@ -30,7 +30,7 @@ document.getElementById('logout-form').submit();">{{ __('Cerrar Sesion') }}</a>
     <div class="w3-col s8 w3-bar">
       <p>Bienvenido, <br><strong>Francisco Soto</strong>
       <p>Hoy es 22-22-2222</p>
-      <p>MeliClean</p>
+      <p>Lappvanderia</p>
     </div>
   </div>
   <hr>

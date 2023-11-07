@@ -14,7 +14,7 @@ class IngresoController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -39,6 +39,8 @@ class IngresoController extends Controller
         $ingresos->id=$request->POST('id');
         $ingresos->encargado=$request->POST('encargado');
         $ingresos->fecha=$request->POST('fecha');
+        $ingresos->srv_clinico=$request->POST('servicio');
+        $ingresos->tipo_ropa=$request->POST('tipo_ropa');
         $ingresos->hora=$request->POST('hora');
         $ingresos->cod_lote=$request->POST('cod_lote');
         $ingresos->cantidad=$request->POST('cantidad');

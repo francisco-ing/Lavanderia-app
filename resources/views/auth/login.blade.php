@@ -81,5 +81,9 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 </body>
-
+@if($errors->any())
+    <div class="alert alert-danger">
+        <p>Error! Credenciales no validas</p>
+    </div>
+@endif
 </html>

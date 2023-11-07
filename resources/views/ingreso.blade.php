@@ -26,6 +26,25 @@
     <label for="hora">Hora</label><br>
     <input type="time" id="hora" name="hora" readonly><br>
 
+    <label for="servicio">Servicio Clinico</label><br>
+    <select id="servicio" name="servicio">
+        <option value="kinesiologia">Kinesiologia</option>
+        <option value="pediatria">Pediatria</option>
+        <option value="odontologia">Odontología </option>
+        <option value="ginecologia">Ginecologia</option>
+        <option value="obstetricia">Obstetricia</option>
+        <option value="Medicina general">Medicina general</option>
+        <option value="laboratorio">Laboratorio</option>
+    </select>
+    <br>
+
+    <label for="servicio">Tipo ropa: </label><br>
+    <select id="tipo_ropa" name="tipo_ropa">
+        <option value="limpia">Limpia</option>
+        <option value="sucia">Sucia</option>
+    </select>
+    <br>
+
     <label for="codLote">Codigo lote</label><br>
     <input type="text" id="cod_lote" name="cod_lote"><br>
 

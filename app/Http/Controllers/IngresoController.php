@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ingreso;
+use App\Models\servicio_clinico;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IngresoController extends Controller
 {
@@ -35,6 +37,10 @@ class IngresoController extends Controller
      */
     public function store(Request $request)
     {
+        Servicio_clinico::where('nombre', $request->POST('servicio'))
+        ->update([
+            'cantidad' => DB::raw('cantidad + ' . $request->input('cantidad'))
+        ]);
         $ingresos = new Ingreso;
         $ingresos->id=$request->POST('id');
         $ingresos->encargado=$request->POST('encargado');
@@ -56,7 +62,7 @@ class IngresoController extends Controller
      */
     public function show(Ingreso $ingreso)
     {
-        //
+
     }
 
     /**

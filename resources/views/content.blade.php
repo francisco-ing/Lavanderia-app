@@ -28,8 +28,7 @@ document.getElementById('logout-form').submit();">{{ __('Cerrar Sesion') }}</a>
 <nav class="w3-sidebar w3-collapse w3-blue" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="w3-container w3-row">
     <div class="w3-col s8 w3-bar">
-      <p>Bienvenido, <br><strong>Francisco Soto</strong>
-      <p>Hoy es 22-22-2222</p>
+      <strong>Bienvenido</strong>
       <p>Lappvanderia</p>
     </div>
   </div>

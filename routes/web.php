@@ -46,6 +46,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/home', [App\Http\Controllers\ServicioClinicoController::class, 'show'])->name('home');
+
 Route::prefix('ingreso')->group(function () {
     Route::post('/store' , [App\Http\Controllers\IngresoController::class, 'store'])->name('ingreso.store');
 });
@@ -53,3 +55,5 @@ Route::prefix('ingreso')->group(function () {
 Route::prefix('egreso')->group(function () {
     Route::post('/store' , [App\Http\Controllers\EgresoController::class, 'store'])->name('egreso.store');
 });
+
+

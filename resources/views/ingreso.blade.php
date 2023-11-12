@@ -17,9 +17,6 @@
     <label for="id">Id</label><br>
     <input type="text" id="id" name="id"><br>
 
-    <label for="encargado">Encargado</label><br>
-    <input type="text" id="encargado" name="encargado"><br>
-
     <label for="fecha">Fecha</label><br>
     <input type="date" id="fecha" name="fecha" readonly><br>
 

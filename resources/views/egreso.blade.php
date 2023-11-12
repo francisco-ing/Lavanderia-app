@@ -18,9 +18,6 @@
     <label for="id">Codigo lote</label><br>
     <input type="text" id="id" name="id"><br>
 
-    <label for="encargado">Encargado</label><br>
-    <input type="text" id="encargado" name="encargado"><br>
-
     <label for="fecha">Fecha</label><br>
     <input valuie type="date" id="fecha" name="fecha" readonly><br>
 

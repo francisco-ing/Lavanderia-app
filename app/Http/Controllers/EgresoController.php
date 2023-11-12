@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Egreso;
 use App\Models\servicio_clinico;
+use App\Models\login;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -43,7 +44,7 @@ class EgresoController extends Controller
         ]);
         $egresos = new Egreso;
         $egresos->id=$request->POST('id');
-        $egresos->encargado=$request->POST('encargado');
+        $egresos->encargado=auth()->user()->name;
         $egresos->fecha=$request->POST('fecha');
         $egresos->hora=$request->POST('hora');
         $egresos->ser_clinico=$request->POST('servicio');

@@ -18,7 +18,7 @@
       <div id="notificaciones">
       <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <h4 class="alert-heading">ATENCION</h4>
-        <p>Atencion, escases de ropa en el area de {{ $servicio_clinico->nombre }} quedan {{ $servicio_clinico->cantidad  }} kilos de ropa </p>
+        <p>Atencion, escases de ropa en el area de {{ $servicio_clinico->nombre }}, quedan {{ $servicio_clinico->cantidad  }} kilos de ropa </p>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       </div>

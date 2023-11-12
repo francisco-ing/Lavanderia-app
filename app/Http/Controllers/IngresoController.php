@@ -43,7 +43,7 @@ class IngresoController extends Controller
         ]);
         $ingresos = new Ingreso;
         $ingresos->id=$request->POST('id');
-        $ingresos->encargado=$request->POST('encargado');
+        $ingresos->encargado=auth()->user()->name;
         $ingresos->fecha=$request->POST('fecha');
         $ingresos->srv_clinico=$request->POST('servicio');
         $ingresos->tipo_ropa=$request->POST('tipo_ropa');
@@ -62,7 +62,6 @@ class IngresoController extends Controller
      */
     public function show(Ingreso $ingreso)
     {
-
     }
 
     /**

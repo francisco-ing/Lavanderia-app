@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AvisosMailable;
 use App\Models\servicio_clinico;
 use Illuminate\Http\Request;
 

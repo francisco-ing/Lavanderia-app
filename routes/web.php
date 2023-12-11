@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Mail\AvisosMailable;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('auth/login');
+});
+
+Route::get('/email', function () {
+    return view('email');
 });
 
 Route::get('/ingreso', function () {
@@ -40,6 +45,11 @@ Route::get('/modificar', function () {
 
 Route::get('/ayuda', function () {
     return view('ayuda');
+});
+
+Route::get('/send', function () {
+    Mail::to('fr.sotol@duocuc.cl')->send(new AvisosMailable());
+    return "enviado!";
 });
 
 Auth::routes();

@@ -17,8 +17,9 @@ class AvisosMailable extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($serviciosClinicos)
     {
+        $this->serviciosClinicos = $serviciosClinicos;
     }
 
 
@@ -29,7 +30,8 @@ class AvisosMailable extends Mailable
      */
     public function build()
     {
-        return $this->view('email',)
-        ->subject('Escasez de Servicios Clínicos');
+        return $this->view('email')
+        ->subject('Escasez de Servicios Clínicos')
+        ->with(['serviciosClinicos' => $this->serviciosClinicos]);
     }
 }

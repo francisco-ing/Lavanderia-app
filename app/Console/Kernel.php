@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('verificar-campo-y-enviar-correo')->everyMinute(); // Ajusta la programación según tus necesidades
     }
 
     /**
@@ -29,4 +29,6 @@ class Kernel extends ConsoleKernel
 
         require base_path('routes/console.php');
     }
+
+
 }

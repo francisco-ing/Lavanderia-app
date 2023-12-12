@@ -11,7 +11,7 @@ class servicio_clinico extends Model
     use HasFactory;
     protected $table='servicio_clinico';
     protected $primaryKey = 'id';
-    protected $fillable=['id', 'nombre', 'cantidad'];
+    protected $fillable=['nombre', 'cantidad'];
     protected $guarded=[];
     public $timestamps=false;
 }

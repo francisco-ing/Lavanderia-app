@@ -49,7 +49,7 @@ Route::get('/ayuda', function () {
 
 Route::get('/send', function () {
     Mail::to('fr.sotol@duocuc.cl')->send(new AvisosMailable());
-    return "enviado!";
+    return redirect('/home');
 });
 
 Auth::routes();

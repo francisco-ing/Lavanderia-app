@@ -47,25 +47,27 @@
 
     <br>
 
-    <h1>Editar cantidades de ropa</h1>
-    <form action="{{ route('egreso.store') }}" method="post" enctype="multipart/form-data">
+    <h1>Eliminar cantidades de ropa</h1>
+    <form action="{{ route('servicioclinico.store') }}" method="post" enctype="multipart/form-data">
         @csrf
-    <label for="servicio">Area a modificar</label><br>
-    <select id="servicio" name="">
-        <option value="kinesiologia">Kinesiologia</option>
-        <option value="pediatria">Pediatria</option>
-        <option value="odontologia">Odontología </option>
-        <option value="ginecologia">Ginecologia</option>
-        <option value="obstetricia">Obstetricia</option>
-        <option value="Medicina general">Medicina general</option>
-        <option value="laboratorio">Laboratorio</option>
-    </select>
-    <br>
+        <label for="servicio">Area de ropa a eliminar</label><br>
+        <select id="servicio" name="servicio">
+            <option value="kinesiologia">Kinesiologia</option>
+            <option value="pediatria">Pediatria</option>
+            <option value="odontologia">Odontología</option>
+            <option value="ginecologia">Ginecologia</option>
+            <option value="obstetricia">Obstetricia</option>
+            <option value="Medicina general">Medicina general</option>
+            <option value="laboratorio">Laboratorio</option>
+        </select>
+        <br>
         <label for="cantidad">Cantidad (Kilos)</label><br>
         <input type="text" id="cantidad" name="cantidad"><br>
-        <br> <button type="submit" class="btn btn-primary">Agregar</button> <br>  <br>  <button type="submit" class="btn btn-primary">Disminuir</button>
-    <br>
+        <br>
+        <button type="submit" class="btn btn-primary">ELIMINAR</button>
+        <br>
     </form>
+
   </div>
   </div>
 

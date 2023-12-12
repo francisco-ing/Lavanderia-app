@@ -6,9 +6,13 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\AvisosMailable;
 use App\Models\servicio_clinico;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class ServicioClinicoController extends Controller
 {
+
+    protected $primaryKey = 'nombre';
     /**
      * Display a listing of the resource.
      *
@@ -34,10 +38,16 @@ class ServicioClinicoController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     *
      */
     public function store(Request $request)
     {
-        //
+
+        Servicio_clinico::where('nombre', $request->POST('servicio'))
+        ->update([
+            'cantidad' => DB::raw('cantidad - ' . $request->input('cantidad'))
+        ]);
+        return redirect()->back();
     }
 
     /**
@@ -72,8 +82,9 @@ class ServicioClinicoController extends Controller
      */
     public function update(Request $request, servicio_clinico $servicio_clinico)
     {
-        //
+
     }
+
 
     /**
      * Remove the specified resource from storage.

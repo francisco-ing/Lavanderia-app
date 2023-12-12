@@ -63,4 +63,8 @@ Route::prefix('egreso')->group(function () {
     Route::post('/store' , [App\Http\Controllers\EgresoController::class, 'store'])->name('egreso.store');
 });
 
+Route::prefix('servicio_clinico')->group(function () {
+    Route::post('/store', [App\Http\Controllers\ServicioClinicoController::class, 'store'])->name('servicioclinico.store');
+});
+
 

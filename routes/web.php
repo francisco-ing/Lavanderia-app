@@ -34,10 +34,7 @@ Route::get('/egreso', function () {
 
 Route::resource('/transaccion', App\Http\Controllers\TransaccionController::class);
 
-Route::get('/generar-pdf', function () {
-    $pdf = PDF::loadView('tabla');
-    return $pdf->download('tabla.pdf');
-});
+Route::get('/generar-reporte/{busqueda?}', [App\Http\Controllers\TransaccionController::class, 'generarReporte'])->name('generar-reporte');
 
 Route::get('/modificar', function () {
     return view('modificar');

@@ -108,7 +108,8 @@
               </tbody>
             </thead>
           </table>
-          <a class="btn btn-success" href="">Generar reporte</a>
+          <!-- resources/views/transaccion.blade.php -->
+          <a class="btn btn-success" href="{{ route('generar-reporte', ['busqueda' => $busqueda]) }}">Generar reporte</a>
         </div>
       </div>
     </div>

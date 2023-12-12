@@ -7,6 +7,7 @@ use App\Models\Ingreso;
 use App\Models\Transaccion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class TransaccionController extends Controller
 {
@@ -40,6 +41,24 @@ class TransaccionController extends Controller
         return view('transaccion', compact('egresos', 'ingresos', 'busqueda'));
     }
 
+    public function generarReporte($busqueda = null)
+    {
+        // Aplica el filtro según el valor de $busqueda
+        $query = Ingreso::query();
+        $query2 = Egreso::query();
+
+        if (!is_null($busqueda)) {
+            // Aplica tu lógica de filtro aquí
+            $query->where('encargado', $busqueda);
+            $query2->where('encargado', $busqueda);
+        }
+
+        $transacciones = $query->get();
+        $transacciones2 = $query2->get();
+
+        $pdf = PDF::loadView('reporte', compact('transacciones','transacciones2'));
+        return $pdf->download('reporte.pdf');
+    }
     /**
      * Show the form for creating a new resource.
      *

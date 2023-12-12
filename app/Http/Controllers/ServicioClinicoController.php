@@ -42,12 +42,21 @@ class ServicioClinicoController extends Controller
      */
     public function store(Request $request)
     {
+        $nombreServicio = $request->input('servicio');
+        $cantidad = $request->POST('servicio');
 
-        Servicio_clinico::where('nombre', $request->POST('servicio'))
-        ->update([
-            'cantidad' => DB::raw('cantidad - ' . $request->input('cantidad'))
-        ]);
-        return redirect()->back();
+        $cantidadActual = Servicio_clinico::where('nombre', $nombreServicio)->value('cantidad');
+
+        if  ( $cantidadActual > $cantidad ){
+            Servicio_clinico::where('nombre', $request->POST('servicio'))
+            ->update([
+                'cantidad' => DB::raw('cantidad - ' . $request->input('cantidad'))
+            ]);
+            return redirect()->back();
+        } else {
+            return redirect()->back();
+        }
+
     }
 
     /**
@@ -58,7 +67,7 @@ class ServicioClinicoController extends Controller
      */
     public function show(servicio_clinico $servicio_clinico)
     {
-        $servicio_clinico = Servicio_clinico::where('cantidad', '<', 15)->get();
+        $servicio_clinico = Servicio_clinico::where('cantidad', '<', 5)->get();
         return view('home', ['servicio_clinicos' => $servicio_clinico]);
     }
 

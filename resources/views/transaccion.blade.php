@@ -27,7 +27,7 @@
   <form action="{{ route('transaccion.index') }}" method="get">
     <label for="busqueda">Buscar por:</label>
     <select id="busqueda" name="busqueda" onchange="cambiarTipoInput()">
-        <option value="id">Coincidencia</option>
+        <option value="id">Nombre</option>
         <option value="fecha">Fecha</option>
     </select>
 

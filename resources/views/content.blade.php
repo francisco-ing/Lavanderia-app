@@ -42,7 +42,7 @@ document.getElementById('logout-form').submit();">{{ __('Cerrar Sesion') }}</a>
     <a href="egreso" class="w3-bar-item w3-button w3-padding"><i class="fa fa-registered"></i>  Registrar Egreso</a>
     <a href="transaccion" class="w3-bar-item w3-button w3-padding"><i class="fa fa-search fa-fw"></i>  Buscar Transacciones</a>
     <a href="modificar" class="w3-bar-item w3-button w3-padding"><i class="fa fa-edit fa-fw"></i>  Modificar datos de ropa</a>
-  </div>
+</div>
 </nav>
   @yield('content')
 </body>

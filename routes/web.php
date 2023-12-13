@@ -32,16 +32,14 @@ Route::get('/egreso', function () {
     return view('egreso');
 });
 
+
 Route::resource('/transaccion', App\Http\Controllers\TransaccionController::class);
+
 
 Route::get('/generar-reporte/{busqueda?}', [App\Http\Controllers\TransaccionController::class, 'generarReporte'])->name('generar-reporte');
 
 Route::get('/modificar', function () {
     return view('modificar');
-});
-
-Route::get('/ayuda', function () {
-    return view('ayuda');
 });
 
 Route::get('/send', function () {

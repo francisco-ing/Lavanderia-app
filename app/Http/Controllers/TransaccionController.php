@@ -47,11 +47,13 @@ class TransaccionController extends Controller
         $query = Ingreso::query();
         $query2 = Egreso::query();
 
-        if (!is_null($busqueda)) {
-            // Aplica tu lógica de filtro aquí
-            $query->where('encargado', $busqueda);
-            $query2->where('encargado', $busqueda);
-        }
+        $query->where(function ($query) use ($busqueda) {
+            $query->where('encargado', $busqueda)
+                  ->orWhere('fecha', $busqueda)
+                  ->orWhere('encargado', 'LIKE', '%' . $busqueda . '%'); // Puedes agregar más condiciones OR según sea necesario
+        });
+
+        $query2->where('encargado', $busqueda);
 
         $transacciones = $query->get();
         $transacciones2 = $query2->get();

@@ -60,6 +60,35 @@ class ServicioClinicoController extends Controller
     }
 
     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     *
+     */
+    public function traslado(Request $request)
+    {
+        $servicioDesde = $request->input('servicioDesde');
+        $servicioHasta = $request->input('servicioHasta');
+        $cantidad = $request->POST('servicio');
+
+        $cantidadActualDesde = Servicio_clinico::where('nombre', $servicioDesde)->value('cantidad');
+        $cantidadActualHasta = Servicio_clinico::where('nombre', $servicioHasta)->value('cantidad');
+
+
+        Servicio_clinico::where('nombre', $request->POST('servicioDesde'))
+        ->update([
+            'cantidad' => DB::raw('cantidad - ' . $request->input('cantidad'))
+        ]);
+
+        Servicio_clinico::where('nombre', $request->POST('servicioHasta'))
+        ->update([
+            'cantidad' => DB::raw('cantidad + ' . $request->input('cantidad'))
+        ]);
+        return redirect()->back();
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  \App\Models\servicio_clinico  $servicio_clinico

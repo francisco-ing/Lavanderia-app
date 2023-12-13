@@ -12,10 +12,10 @@
 
   <div class="w3-row-padding w3-margin-bottom">
     <h1>Traslados de ropa</h1>
-    <form action="{{ route('egreso.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('servicioclinico.traslado') }}" method="post" enctype="multipart/form-data">
         @csrf
-    <label for="servicio">Cambiar desde</label><br>
-    <select id="servicio" name="servicio_desde">
+    <label for="servicioDesde">Cambiar desde</label><br>
+    <select id="servicioDesde" name="servicioDesde">
         <option value="kinesiologia">Kinesiologia</option>
         <option value="pediatria">Pediatria</option>
         <option value="odontologia">Odontología </option>
@@ -26,8 +26,8 @@
     </select>
 
     <br>
-    <label for="servicio">Hasta</label><br>
-    <select id="servicio" name="servicio_hasta">
+    <label for="servicioHasta">Hasta</label><br>
+    <select id="servicioHasta" name="servicioHasta">
         <option value="kinesiologia">Kinesiologia</option>
         <option value="pediatria">Pediatria</option>
         <option value="odontologia">Odontología </option>
